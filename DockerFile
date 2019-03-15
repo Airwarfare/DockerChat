@@ -1,0 +1,12 @@
+#Thanks to https://nodejs.org/en/docs/guides/nodejs-docker-webapp/ for this setup file
+FROM node:8
+#Create Project directory
+WORKDIR /usr/src/app
+#Install deps
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+CMD ["npm", "start"]

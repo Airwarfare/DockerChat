@@ -1,0 +1,2 @@
+#Ignore node modules, you can just use npm to get these :)
+node_modules/
