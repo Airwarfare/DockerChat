@@ -1,0 +1,14 @@
+#chatmessagebox {
+    list-style-type: none;
+    margin:0px;
+    flex-direction: column-reverse;
+    height:80%;
+    overflow:none;
+    position: relative;
+}
+
+html, body {
+    margin:0px;
+    height:100%;
+    width:100%;
+}

@@ -1,12 +1,18 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Testing</title>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        Hello Docker world!
-
-
+        <ul id="chatmessagebox"></ul>
         <!--Include in body for faster lighthouse performance results-->
+        <script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
