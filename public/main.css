@@ -5,6 +5,11 @@
     height:95%;
     overflow:none;
     position: relative;
+    padding-inline-start: 0px;
+}
+
+#chatmessagebox li:nth-child(odd) {
+    background: #eee;
 }
 
 html, body {

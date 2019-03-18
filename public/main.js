@@ -15,7 +15,7 @@ socket.on('clientmessage', function(msg) {
 
 //Adds a message to the list
 function AddMessage(msg) {
-    $('#chatmessagebox').append($('<li style="padding: 2px;font-size: 20px;">').text(msg)); //Add message to support bottom to top
+    $('#chatmessagebox').append($('<li style="padding: 2px;font-size: 20px;padding-left:40px">').text(msg)); //Add message to support bottom to top
 }
 
 //https://stackoverflow.com/a/9964945
@@ -33,4 +33,5 @@ $.fn.enterKey = function (fnc) {
 
 $("#messageinput").enterKey(function() { //Get enter key on the message input
     socket.emit('message', Username + ': ' + $("#messageinput").val()); //send it to the server
+    $('#messageinput').val('');
 })
