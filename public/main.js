@@ -4,6 +4,13 @@ do{
     Username = prompt("Please enter your username", "Airwarfare");
 }while(Username == null || Username == "" ); //Make sure the user give us an input
 
+//https://stackoverflow.com/a/23095818
+//Thanks again stackoverflow (Random RGB Generator)
+function random_rgb() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ')';
+}
+var CurrentColor = random_rgb()
 var socket = io();
 
 
@@ -15,7 +22,7 @@ socket.on('clientmessage', function(msg) {
 
 //Adds a message to the list
 function AddMessage(msg) {
-    $('#chatmessagebox').append($('<li style="padding: 2px;font-size: 20px;padding-left:40px">').text(msg)); //Add message to support bottom to top
+    $('#chatmessagebox').append($('<li style="padding: 2px;font-size: 20px;padding-left:40px">' + msg + "</li>").clone()); //Add message to support bottom to top
 }
 
 //https://stackoverflow.com/a/9964945
@@ -32,6 +39,6 @@ $.fn.enterKey = function (fnc) {
 }
 
 $("#messageinput").enterKey(function() { //Get enter key on the message input
-    socket.emit('message', Username + ': ' + $("#messageinput").val()); //send it to the server
+    socket.emit('message', '<span style=\"color:' + CurrentColor + '\">' + Username + '</span>: ' + $("#messageinput").val()); //send it to the server
     $('#messageinput').val('');
 })
